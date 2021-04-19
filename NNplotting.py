@@ -1,25 +1,10 @@
 import matplotlib.pyplot as plt
-# import argparse
 import pickle
 import pandas as pd
 from collections import OrderedDict
-# import time
-# import re
-
-# from NNAgent import DQNNAgent
-
-# parser = argparse.ArgumentParser()
-# parser.add_argument('-m', '--mode', type=str, required=True, help='either "train" or "test"')
-# args = parser.parse_args()
 
 
 # df = pd.read_csv('close_pricesGOOGLAMZNAAPL.csv', parse_dates=True, index_col=0)
-# df = df[1006:]
-# # print(df_new.head())
-# # print(df_new.tail())
-# print(df.head())
-# print(df.tail())
-
 
 def uniform_portfolio(x, y, z):
     return 287*x + 77*y + 239*z + 20
