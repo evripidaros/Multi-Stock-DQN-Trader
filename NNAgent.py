@@ -3,8 +3,8 @@ import random
 import numpy as np
 import keras
 
-from keras.models import Sequential
-from keras.layers import Dense
+# from keras.models import Sequential
+# from keras.layers import Dense
 from keras.optimizers import Adam
 
 
@@ -20,18 +20,9 @@ class DQNNAgent(object):
         self.epsilon_min = 0.01
 
         # Model
-        self.model = self.build_model1()
+        self.model = self.build_model()
 
     def build_model(self):
-        model = Sequential()
-        model.add(Dense(32, input_dim=self.state_size, activation='relu'))
-        model.add(Dense(32, activation='relu'))
-        model.add(Dense(self.action_size, activation='linear'))
-        model.compile(loss='mse', optimizer=Adam())
-        print(model.summary())
-        return model
-
-    def build_model1(self):
         X = keras.layers.Input(shape=(self.state_size,))
         _fc = keras.layers.Dense(64, activation='relu', kernel_initializer='he_uniform')(X)
         _fc = keras.layers.Dense(64, activation='relu', kernel_initializer='he_uniform')(_fc)
