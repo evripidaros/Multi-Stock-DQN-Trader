@@ -103,7 +103,7 @@ def uniformplotting1():
     plt.show()
 
 
-uniformplotting1()
+# uniformplotting1()
 
 
 def densityplotting():
@@ -114,7 +114,7 @@ def densityplotting():
     plt.show()
 
 
-densityplotting()
+# densityplotting()
 
 
 def metrics():
