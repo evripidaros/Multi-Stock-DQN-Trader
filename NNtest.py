@@ -1,11 +1,8 @@
 import pickle
 import argparse
-# import numpy as np
 import time
 import re
 from tqdm import tqdm
-# from collections import OrderedDict
-# import pandas as pd
 
 from NNEnvironment import MultiEnv, get_data, get_data1, get_scaler, maybe_make_dir
 from NNAgent import DQNNAgent
@@ -66,7 +63,6 @@ if __name__ == '__main__':
 
     episode_pnl = []
 
-    # TODO
     if args.mode == 'test':
         # remake the env with test data
         env = MultiEnv(test_data, initial_investment)
@@ -79,8 +75,6 @@ if __name__ == '__main__':
         # no need to run multiple episodes if epsilon is 0, it's deterministic
         agent.epsilon = 0.01
 
-    # CHANGED
-    # TODO
     for e in tqdm(range(num_episodes)):
         state = env._reset()
         state = scaler.transform([state])
@@ -116,7 +110,3 @@ if __name__ == '__main__':
     # save portfolio value history to disk
     with open('portfolio_val/{}-{}.p'.format(timestamp, args.mode), 'wb') as fp:
         pickle.dump(portfolio_value, fp)
-
-    # save single episode PnL over the training
-    # with open('episode_pnl/{}-{}-{}.p'.format(timestamp, args.mode, e+1), 'wb') as fp:
-    #     pickle.dump(episode_pnl, fp)
