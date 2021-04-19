@@ -1,5 +1,5 @@
 # DQN - Trader
-3-stock Environment for automated trading
+<b>3-stock Environment for automated trading</b>
 
 For training run: python NNtest.py -m train
 
